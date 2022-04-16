@@ -6,23 +6,21 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class ProductController {
+public class CatalogController {
 
-    @GetMapping("/products")
-    public ModelAndView products(ModelAndView mv) {
-        mv.setViewName("products");
+    @GetMapping("/catalog")
+    public ModelAndView catalog(ModelAndView mv) {
+        mv.setViewName("catalog");
 
         return mv;
     }
 
-    @GetMapping("/product/{id}")
-    public ModelAndView singleProduct(ModelAndView mv, @PathVariable Integer id) {
-        mv.setViewName("product-by-id");
-
+    @GetMapping("/catalog/{id}")
+    public ModelAndView specificalCatalog(ModelAndView mv, @PathVariable Integer id) {
+        mv.setViewName("catalog-by-name");
         /*
             Do some stuff with id
          */
-
         return mv;
     }
 }

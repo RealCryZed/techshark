@@ -2,10 +2,7 @@ package com.techshark.Models;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -14,7 +11,7 @@ public class Product {
     @Id
     @GeneratedValue
     @Column(name="PROD_ID")
-    private int id;
+    private int product_id;
 
     @Column(name="PROD_PRICE")
     private int price;
@@ -28,5 +25,7 @@ public class Product {
     @Column(name="PROD_INSTOCK")
     private int inStock;
 
-    /* add categories in future */
+    @JoinColumn(name = "CATALOG_NAME")
+    @ManyToOne
+    private Catalog catalog;
 }

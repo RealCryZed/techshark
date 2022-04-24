@@ -6,6 +6,8 @@
     <title>TechShark - Buy tech for best price!</title>
 </head>
 <body>
-<p th:object="${catalog}" th:text="${catalog}"></p>
+    <div th:each="singleCatalog : ${catalogs}">
+        <a th:href="'/catalog/' + ${singleCatalog.getCatalogId()}" th:object="${singleCatalog}" th:text="${singleCatalog.getCatalogName()}"></a>
+    </div>
 </body>
 </html>

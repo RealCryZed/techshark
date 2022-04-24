@@ -11,7 +11,10 @@ public class Product {
     @Id
     @GeneratedValue
     @Column(name="PROD_ID")
-    private int product_id;
+    private int productId;
+
+    @Column(name="PROD_NAME")
+    private String name;
 
     @Column(name="PROD_PRICE")
     private int price;

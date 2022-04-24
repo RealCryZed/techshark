@@ -21,4 +21,8 @@ public class CatalogService {
     public List<Catalog> getAllCatalogs() {
         return catalogRepo.findAll();
     }
+
+    public Catalog getSingleCatalog(Integer id) {
+        return catalogRepo.getById(id);
+    }
 }

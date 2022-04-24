@@ -2,6 +2,7 @@ package com.techshark.Controllers;
 
 import com.techshark.Models.Catalog;
 import com.techshark.Services.CatalogService;
+import com.techshark.Services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -15,36 +16,43 @@ public class CatalogController {
     @Autowired
     private CatalogService catalogService;
 
-    @GetMapping("/catalog")
+    @Autowired
+    private ProductService productService;
+
+    @GetMapping("/catalogs")
     @ResponseBody
-    public ModelAndView catalog(ModelAndView mv) {
+    public ModelAndView catalog() {
+        ModelAndView mv = new ModelAndView();
         mv.setViewName("catalog");
-        mv.addObject("catalog", catalogService.getAllCatalogs());
+        mv.addObject("catalogs", catalogService.getAllCatalogs());
 
         return mv;
     }
 
     @GetMapping("/catalog/{id}")
-    public ModelAndView specificalCatalog(ModelAndView mv, @PathVariable Integer id) {
+    public ModelAndView specificalCatalog(@PathVariable Integer id) {
+        ModelAndView mv = new ModelAndView();
         mv.setViewName("catalog-by-name");
-        /*
-            Do some stuff with id
-         */
+        mv.addObject("products", productService.getAllProductsById(id));
+        mv.addObject("specificalCatalog", catalogService.getSingleCatalog(id));
+
         return mv;
     }
 
     @GetMapping("/add-catalog")
-    public ModelAndView getAddCatalogPage(ModelAndView mv) {
+    public ModelAndView getAddCatalogPage() {
+        ModelAndView mv = new ModelAndView();
         mv.setViewName("add-catalog");
         mv.addObject("catalog", new Catalog());
         return mv;
     }
 
     @PostMapping("/add-catalog")
-    public ModelAndView addCatalog(ModelAndView mv, Catalog catalog) {
+    public ModelAndView addCatalog(Catalog catalog) {
+        ModelAndView mv = new ModelAndView();
         catalogService.addCatalog(catalog);
 
-        mv.setViewName("main");
+        mv.setViewName("redirect:/");
         return mv;
     }
 }

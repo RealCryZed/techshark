@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CatalogRepo extends JpaRepository<Catalog, Integer> {
 
+    Catalog findCatalogByCatalogName(String catalogName);
 }

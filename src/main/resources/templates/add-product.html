@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" th:action="@{/add-product}" th:object="${product}">
+        <input type="text" placeholder="Product name" th:field="*{name}">
+        <input type="number" placeholder="Product price" th:field="*{price}">
+        <input type="text" placeholder="Product description" th:field="*{description}">
+        <input type="number" placeholder="How many items in stock" th:field="*{inStock}">
+        <input type="text" placeholder="Product catalog" th:field="*{catalogName}">
+        <button type="submit">Сохранить</button>
+    </form>
+</body>
+</html>

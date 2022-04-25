@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Product {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="PROD_ID")
     private int productId;
 
@@ -28,7 +28,10 @@ public class Product {
     @Column(name="PROD_INSTOCK")
     private int inStock;
 
-    @JoinColumn(name = "CATALOG_NAME")
+    @JoinColumn(name = "CATALOG_NAME", referencedColumnName = "CATALOG_NAME")
     @ManyToOne
     private Catalog catalog;
+
+    @Transient
+    private String catalogName;
 }

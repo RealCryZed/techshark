@@ -8,8 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
-
 @Controller
 public class CatalogController {
 
@@ -34,7 +32,7 @@ public class CatalogController {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("catalog-by-name");
         mv.addObject("products", productService.getAllProductsById(id));
-        mv.addObject("specificalCatalog", catalogService.getSingleCatalog(id));
+        mv.addObject("specificalCatalog", catalogService.getCatalogById(id));
 
         return mv;
     }
@@ -50,9 +48,10 @@ public class CatalogController {
     @PostMapping("/add-catalog")
     public ModelAndView addCatalog(Catalog catalog) {
         ModelAndView mv = new ModelAndView();
+        mv.setViewName("redirect:/add-catalog");
+
         catalogService.addCatalog(catalog);
 
-        mv.setViewName("redirect:/");
         return mv;
     }
 }

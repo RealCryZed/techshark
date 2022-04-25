@@ -24,4 +24,8 @@ public class ProductService {
     public List<Product> getAllProductsById(Integer id) {
         return productRepo.findAllByCatalog(id);
     }
+
+    public void saveProduct(Product product) {
+        productRepo.save(product);
+    }
 }

@@ -22,7 +22,11 @@ public class CatalogService {
         return catalogRepo.findAll();
     }
 
-    public Catalog getSingleCatalog(Integer id) {
+    public Catalog getCatalogById(Integer id) {
         return catalogRepo.getById(id);
+    }
+
+    public Catalog getCatalogByName(String catalogName) {
+        return catalogRepo.findCatalogByCatalogName(catalogName);
     }
 }

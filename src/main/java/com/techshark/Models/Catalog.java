@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Catalog {
 
     @Id
-    @GeneratedValue()
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int catalogId;
 
     @Column(name="CATALOG_NAME")

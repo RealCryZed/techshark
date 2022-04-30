@@ -1,13 +1,91 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+	  xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>TechShark - Buy tech for best price!</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TechShark</title>
+	<link type="text/css" rel="stylesheet" th:href="@{/styles/style-main.css}" />
 </head>
+
+<!-- Page took from https://github.com/p-katherine/TechShark -->
+
 <body>
-    <div th:each="catalog : ${catalogs}">
-        <a th:href="'/catalog/' + ${catalog.getCatalogId()}" th:text="${catalog.getCatalogName()}"></a>
-    </div>
+	<header>
+		<div class="header-container">
+			<div class="header-blocks">
+				<div class="title-name"><a href="#">TechShark</a></div>
+			</div>
+			<div class="header-blocks">
+				<input id="searcher" type="text" name="search" placeholder="&nbsp;&nbsp;&nbsp;Поиск по товарам">
+				<a href="#"><img class="search-img" src="/images/search.png"></a>
+			</div>
+			<div class="header-blocks">
+				<div>
+					<a href="#" ><img src="/images/shopping-cart.png" class="cart-profile-img"></a>
+					<a href="#" class="cart-profile">Корзина</a>
+				</div>
+			</div>
+			<div class="header-blocks">
+				<div>
+					<a href="authorization.html" ><img src="/images/profile.png" id="profile" class="cart-profile-img"></a>
+					<a href="authorization.html" class="cart-profile">Профиль</a>
+				</div>
+			</div>
+		</div>
+	</header>
+
+
+	<div class="categories">
+		<h1 id="categories-title">Категории</h1>
+		<div class="categories-blocks">
+			<img src="/images/smartphones.png" class="blocks-images">
+			<a href="#"><p class="blocks-title">Смартфоны →</p></a>
+		</div>
+		<div class="categories-blocks">
+			<img src="/images/notebook.png" class="blocks-images">
+			<a href="#"><p class="blocks-title">Ноутбуки →</p></a>
+		</div>
+		<div class="categories-blocks">
+			<img src="/images/television.png" class="blocks-images">
+			<a href="#"><p class="blocks-title">Телевизоры →</p></a>
+		</div>
+		<div class="categories-blocks">
+			<img src="/images/headphones.png" class="blocks-images">
+			<a href="#"><p class="blocks-title">Наушники и гарнитуры →</p></a>
+		</div>
+		<div class="categories-blocks">
+			<img src="/images/gadgets.png" class="blocks-images">
+			<a href="#"><p class="blocks-title">Гаджеты →</p></a>
+		</div>
+
+		<p>
+		<div class="categories-blocks">
+			<img src="/images/component-computers.png" class="blocks-images">
+			<a href="#"><p class="blocks-title">Комплектующие →</p></a>
+		</div>
+		<div class="categories-blocks">
+			<img src="/images/appliances.png" class="blocks-images">
+			<a href="#"><p class="blocks-title">Бытовая техника →</p></a>
+		</div>
+		<div class="categories-blocks">
+			<img src="/images/office.png" class="blocks-images">
+			<a href="#"><p class="blocks-title">Офис →</p></a>
+		</div>
+		<div class="categories-blocks">
+			<img src="/images/automotive-products.png" class="blocks-images">
+			<a href="#"><p class="blocks-title">Автотовары →</p></a>
+			
+		</div>
+		<div class="categories-blocks">
+			<img src="/images/joystick.png" class="blocks-images">
+			<a href="#"><p class="blocks-title">Развлечения →</p></a>
+			
+		</div>
+	
+			
+	</div>
+		
+
 </body>
 </html>

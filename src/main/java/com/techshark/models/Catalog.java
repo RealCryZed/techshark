@@ -1,4 +1,4 @@
-package com.techshark.Models;
+package com.techshark.models;
 
 import lombok.Data;
 

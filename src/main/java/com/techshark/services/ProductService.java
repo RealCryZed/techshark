@@ -1,7 +1,7 @@
-package com.techshark.Services;
+package com.techshark.services;
 
-import com.techshark.Interface.ProductRepo;
-import com.techshark.Models.Product;
+import com.techshark.interfaces.ProductRepo;
+import com.techshark.models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,10 +1,9 @@
-package com.techshark.Services;
+package com.techshark.services;
 
-import com.techshark.Interface.CatalogRepo;
-import com.techshark.Models.Catalog;
+import com.techshark.interfaces.CatalogRepo;
+import com.techshark.models.Catalog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 

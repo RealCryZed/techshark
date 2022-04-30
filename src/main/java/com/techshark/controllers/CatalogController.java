@@ -1,8 +1,8 @@
-package com.techshark.Controllers;
+package com.techshark.controllers;
 
-import com.techshark.Models.Catalog;
-import com.techshark.Services.CatalogService;
-import com.techshark.Services.ProductService;
+import com.techshark.models.Catalog;
+import com.techshark.services.CatalogService;
+import com.techshark.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

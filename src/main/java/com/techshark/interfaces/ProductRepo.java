@@ -1,6 +1,6 @@
-package com.techshark.Interface;
+package com.techshark.interfaces;
 
-import com.techshark.Models.Product;
+import com.techshark.models.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
